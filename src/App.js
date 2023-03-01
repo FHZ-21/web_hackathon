@@ -12,9 +12,9 @@ function App() {
       <Router>
         <Header/>
         <Switch>
-          <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/custom" component={Custom}/>
+          <Route exact path="/:firstpath?/:secondpath?" component={Home}></Route>
         </Switch>
       </Router>
     </>
