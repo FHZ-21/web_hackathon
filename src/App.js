@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Custom from "./Components/Custom";
 import About from "./Components/About";
 import Home from "./Components/Home";
-import Header from "./Components/Header"
+import Header from "./Components/Header";
+import './style/link.css'
 
 function App() {
   return (
