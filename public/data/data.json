@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "nom_fichier": "fehizoro",
+        "date_ajout": "2015-03-03",
+        "type_fichier": "text/plain",
+        "contenu_fichier": "lorem255 bdb"
+    },
+    {
+        "id": "2",
+        "nom_fichier": "fehizoro",
+        "date_ajout": "2015-03-03",
+        "type_fichier": "application/pdf",
+        "contenu_fichier": "lorem255 bdb"
+    },
+    {
+        "id": "3",
+        "nom_fichier": "fehizoro",
+        "date_ajout": "2015-03-03",
+        "type_fichier": "application/pdf",
+        "contenu_fichier": "lorem255 bdb"
+    } 
+]
