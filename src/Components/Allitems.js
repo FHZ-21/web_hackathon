@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 function Allitems({ data }) {
-    const [file_type, setFile_type] = useState('invalid-file')
     
     useEffect(() => {
 

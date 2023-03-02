@@ -15,9 +15,9 @@ const PaginateNew = ({ page, pagetotal, setPage }) => {
     <>
       <div className="doc__indicator">
         <span>Documents</span>
-        <span className="doc__indicator__begin">1</span>
-        <span>-</span>
-        <span className="doc__indicator__end">10</span>
+        <span className="doc__indicator__begin"> 1</span>
+        <span> - </span>
+        <span className="doc__indicator__end"> 10</span>
       </div>
       <div className="page__indicator">
         <span>Page</span>
@@ -35,7 +35,7 @@ const PaginateNew = ({ page, pagetotal, setPage }) => {
           <img className="page__icon" src={imgRightArrow} alt="Next page" />
         </button>
         <span>sur </span>
-        <span className="page__indicator__end">{pagetotal}</span>
+        <span className="page__indicator__end"> {pagetotal}</span>
       </div>
     </>
   );

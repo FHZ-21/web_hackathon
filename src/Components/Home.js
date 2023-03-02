@@ -24,8 +24,8 @@ function Home() {
 
   const getPages = async () => {
     try {
-      const res = await axios.get(`http://192.168.8.103:3000/data`, {
-        params: { page: page, motcle: motcle },
+      const res = await axios.get(`http://192.168.8.101:3000/data`, {
+        params: { page: page, search: motcle },
       });
       // let res = await axios.get('http://localhost:3000/data/data.json')
       console.log(res.data);
@@ -37,6 +37,34 @@ function Home() {
     }
   };
 
+  const search = async (e) => {
+    e.preventDefault()
+    setPage(1)
+    try {
+      const res = await axios.get(`http://192.168.8.101:3000/data`, {
+        params: { page: page, search: motcle },
+      });
+      // let res = await axios.get('http://localhost:3000/data/data.json')
+      console.log(res.data);
+
+      setData(res.data.data);
+      setPagetotal(res.data.page_count);
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+  
+
+  const getOnefile = async (id) => {
+    try {
+      const res = await axios.get(`http://192.168.8.101:3000/data/file?id=${id}`)
+      console.log(res.data[0][0])
+      console.log('hello from line 62')
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+
   useEffect(() => {
     getPages();
     console.log(firstpath);
@@ -44,7 +72,7 @@ function Home() {
     history.replace(String(page))
   }, [page]);
 
-  useEffect(() => {
+  useEffect(() => { 
     // fetchText();
     getPages();
    
@@ -53,7 +81,7 @@ function Home() {
   return (
     <section>
       <div className="search">
-        <form onSubmit={getPages}>
+        <form onSubmit={search}>
           <input
             type="search"
             className="search__input"
@@ -85,6 +113,7 @@ function Home() {
           {data.map((item) => {
             return(
               <ItemFile
+                onClick={() => {getOnefile(item.id)}}
                 key={item.id}
                 filetype={item.type}
                 fileSize={item.size}
